@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <body>
+
+
+<table style="width:100%">
+  <tr>
+    <th>stock</th>
+    <th>current price</th>
+    <th>shares</th>
+    <th>total</th>
+  </tr>
+  {%for stock_data in stock_datas%}
+      <tr>
+          <td>{{stock_data['stock']}}</td>
+          <td>{{stock_data['price']}}</td>
+          <td>{{stock_data['shares']}}</td>
+          <td>{{stock_data['subtotal']}}</td>
+      </tr>
+    {%endfor%}
+    <tr>        
+        <td>cash</td>
+        <td>{{cash}}</td>
+        <td></td>
+        <td></td>
+    
+    </tr>
+        <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>{{total}}</td>
+          </tr>
+    
+</table>
+
+</body>
+{% endblock %}
+
